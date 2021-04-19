@@ -42,6 +42,7 @@ $this->session = Services::session();
 		?>
 		<div class="col-6">
 			<form action="<?=base_url()?>/Login/checkEmail" method="post">
+				<div class="text-center"><h2> Login Form</h2></div>
 				<div class="mb-3">
 				  <label for="emailID" class="form-label">Email address</label>
 				  <input type="email" class="form-control" id="emailID" name="emailID" placeholder="name@example.com" required>
@@ -59,6 +60,7 @@ $this->session = Services::session();
 
 		<div class="col-6">
 			<form action="<?=base_url()?>/Login/LoggedIn" method="post">
+				<div class="text-center"><h2> Login Form</h2></div>
 				<div class="mb-3">
 				  <label for="password" class="form-label">Password</label>
 				  <input type="password" class="form-control" id="password" name="password" required>

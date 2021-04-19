@@ -5,7 +5,7 @@ $this->session = Services::session();
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<title>Dashboard</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/all.css" integrity="sha512-ajhUYg8JAATDFejqbeN7KbF2zyPbbqz04dgOLyGcYEk/MJD3V+HJhJLKvJ2VVlqrr4PwHeGTTWxbI+8teA7snw==" crossorigin="anonymous" />
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -48,6 +48,8 @@ $this->session = Services::session();
 		
 	<div class="container justify-content-center d-flex">
 		<div class="col-6">
+			
+				<div class="text-center"><h2> User Details</h2></div>
 			<div class="text-center image text-justify align-items-center">
                 <div class="">Update Profile Image</div>
                 <div id="uploaded_image"></div><br />

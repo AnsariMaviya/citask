@@ -26,18 +26,26 @@ class Login extends BaseController
 		if($this->session->get('user'))	
 			return redirect()->to(base_url()."/Dashboard"); 
 		else{
-			if($this->session->get('email'))
+			if($this->session->get('email')){
 				$data['email']=$this->session->get('email');
-			return view('login',$data);
+				$user = $this->loginModel->verifyEmail($data);
+				if(count($user)>0)
+					return view('login',$data);
+			}
+			return view('login');
 		}
 	}
 
 	public function checkEmail()
 	{
 		if(isset($_POST['emailID']) || $this->session->get('email')){
-			if(!$this->session->get('email'))
+			if(!$this->session->get('email') && !isset($_POST['emailID'])){
 				$this->session->set('email', $_POST['emailID']);
-			$data['email'] = $this->session->get('email');
+				$data['email'] = $this->session->get('email');
+			}
+			else
+				$data['email'] = $_POST['emailID'];
+			$this->session->set('email', $_POST['emailID']);
 			$user = $this->loginModel->verifyEmail($data);
 			if(count($user)>0)
 				return view('login',$data);
